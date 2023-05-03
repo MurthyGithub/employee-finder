@@ -1,11 +1,13 @@
-import './App.css';
+import React, { PureComponent } from 'react';
+import Dashboard from './app/components/Dashboard';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">   
-      Initial setup for  displaying employee information   
-    </div>
-  );
+export class App extends PureComponent { 
+  render() {
+    return(
+      <Dashboard/>
+    );
+  }
 }
 
 export default App;
