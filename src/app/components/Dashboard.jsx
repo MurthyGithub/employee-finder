@@ -3,7 +3,7 @@ import Header from './common/Header';
 import Search from './common/Search';
 import EmployeeList from './employee/EmployeeList';
 
-function Dashboard() {
+const Dashboard = () => {
   return (
     <Container>
       <Header/> 
