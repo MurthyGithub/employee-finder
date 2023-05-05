@@ -2,7 +2,7 @@ const faker = require("faker/locale/en_AU");
 const path = require("path");
 const fs = require("fs");
 
-const employeeCount = 11;
+const employeeCount = 23;
 const employeeAgeRange = { min: 17, max: 67 };
 
 try {

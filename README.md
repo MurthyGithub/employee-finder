@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Employee Finder
+
+This application will be used to display all employees and their information in the company.
+To make it run in local follow below commands
+npm run start-server (runs express server on port 3001)
+npm start (runs in browser on port 3000)
+
+![image](https://user-images.githubusercontent.com/16698881/236364866-5b221577-c4a3-4bae-8031-77f49974eaf1.png)
+
+![image](https://user-images.githubusercontent.com/16698881/236365105-8940c2a7-02fd-43b7-8130-f0497ec8736b.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
 In the project directory, you can run:
+
+### `npm run start-server`
+
+Runs express server on node in http://localhost:3001 and copies fake data generated through fake API to sample-data.json
+Health check can be done through browser or postman tool
+http://localhost:3001/employees
+http://localhost:3001/company
+
+same thing can be done indiviually through (reffer package.json)
+npm run host
+npm run setup
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run build'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+used to produce production code
 
-### `npm run eject`
+## Scope of improvements
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Keeping time in mind the changes are restricted to the scope of the assignment.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Typescript - 
+used in order to increase type checking and modelling of data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+StoryBook - 
+moving common components will increase usability and options available on components for consuming teams.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Mobile first design (Responsive application) - 
+Achieved thorugh base framework like bootstrap and still there is a scope for getting different layouts for other supporting devices.
 
-## Learn More
+Accessibility - Used accessible elements and aria-tags. Not tested with screen readers and reports.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Unit testing components - Need to have seperate test file for each component, so that it will shifted easily and reused without bugs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Snapshot testing - Need to add snapshots to compare version changes
+E2E testing - To trace the flow and functionaly of the application
 
-### Code Splitting
+Localization - 
+Fake api is using localized content. static content in this application requires translation strings in the supported language files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
