@@ -12,13 +12,15 @@ import employee1 from '../../../images/employee1.jpg';
 const EmployeeList = () => {
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
-    const [page, setPage] = useState(1);
+    const [activePage, setActivePage] = useState(1);
     const [selectedEmployee, setSelectedEmployee] = useState(undefined);
     const employees = useSelector(state => state.employeesInfo.data);
     const status = useSelector(state => state.employeesInfo.status);
     const onPaginatedItemClick = (pageNumber) => {
-        setPage(pageNumber)
+        setActivePage(pageNumber)
     }
+    const countPerPage = 10;
+    
     useEffect(() => {
         if(status === 'init') {
          dispatch(fetchEmployees()); 
@@ -34,9 +36,11 @@ const EmployeeList = () => {
     const showpageCount  = () => 
         employees.length < 10 ? 
         employees.length:
-        (page * 10 > employees.length ? employees.length : page * 10);
+        (activePage * countPerPage > employees.length ? employees.length : activePage * countPerPage);
 
-    const numberOfPages = () => Math.ceil(employees?.length / 10);
+    const numberOfPages = () => Math.ceil(employees?.length / countPerPage);
+    const previousPage = (activePage - 1) * countPerPage;
+    const nextPage = activePage*countPerPage;
     return (
         <>
             {
@@ -44,7 +48,7 @@ const EmployeeList = () => {
                 <section className="px-5">
                     <Row>
                         <span>{`showing ${showpageCount()} of ${employees.length}`}</span>              
-                    </Row>
+                    </Row> 
                     <Row  className="py-3">
                         <Table responsive striped bordered hover>
                             <thead>
@@ -55,7 +59,7 @@ const EmployeeList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                { employees.map((employee, index) => (
+                                { employees.slice(previousPage, nextPage).map((employee, index) => (
                                     <tr key={index} onClick={ (e) => onClockRow(e, employee.id)}>                                       
                                         <td>{employee.id.substr(0,8)}</td> 
                                         <td className="avatar">
@@ -72,7 +76,7 @@ const EmployeeList = () => {
                         </Table>
                     </Row>  
                     <Row>
-                        <Col sm={{span: 4, offset: 8}}>  
+                        <Col>  
                             <TablePagination pages={numberOfPages()} onPaginatedItemClick={onPaginatedItemClick}/>
                         </Col>
                     </Row>     

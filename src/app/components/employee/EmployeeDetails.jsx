@@ -14,12 +14,13 @@ const EmployeeDetails = (props) => {
                         <img src={employee2 ?? avatar} alt="Avatar"/>
                         <div>
                             <span>{jobTitle}</span><br/>
-                            <span>age : {age}</span><br/>
-                            <span>{new Date(dateJoined).toDateString()}</span>
+                            <span>Age: {age}</span><br/>
+                            <span>Joined date : {new Date(dateJoined).toDateString()}</span>
                         </div>                        
                     </Col>
                     <Col xs={8}>
-                        <p>{`${firstName} ${lastName}`}</p>
+                        <h4>{`${firstName} ${lastName}`}</h4>
+                        <br/>
                         <p>{bio}</p>
                     </Col>
                 </Row>   

@@ -21,15 +21,18 @@ const TablePagination = (props) => {
    
     const onClickItemMenu = (event, page) => {
         event.preventDefault();
-        setActiveTab(page);
-        props.onPaginatedItemClick(page);
+        const pageNumber = page === 'prev' ? activeTab-1 : (page === 'next' ? activeTab + 1: page);
+        if(!isNaN(pageNumber)) {
+            setActiveTab(pageNumber);
+            props.onPaginatedItemClick(pageNumber);
+        }       
     }
     
     return (        
         <Pagination>
-             <Pagination.Item>Prev</Pagination.Item>
+             <Pagination.Item onClick={(e) => onClickItemMenu(e, 'prev')}>Prev</Pagination.Item>
              {pageItems}
-             <Pagination.Item>Next</Pagination.Item>
+             <Pagination.Item onClick={(e) => onClickItemMenu(e, 'next')}>Next</Pagination.Item>
         </Pagination>
     )      
 }
