@@ -5,7 +5,7 @@ To make it run in local follow below commands
 npm run start-server (runs express server on port 3001)
 npm start (runs in browser on port 3000)
 
-![image](https://user-images.githubusercontent.com/16698881/236364866-5b221577-c4a3-4bae-8031-77f49974eaf1.png)
+![image](https://user-images.githubusercontent.com/16698881/236365682-f269b210-11ea-4212-a793-e3a802c8298c.png)
 
 ![image](https://user-images.githubusercontent.com/16698881/236365105-8940c2a7-02fd-43b7-8130-f0497ec8736b.png)
 
@@ -37,10 +37,6 @@ Launches the test runner in the interactive watch mode.\
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-
-### `npm run build'
-
-used to produce production code
 
 ## Scope of improvements
 
