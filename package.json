@@ -23,10 +23,14 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
     "express": "^4.18.2",
     "faker": "^4.1.0",
     "nodemon": "^2.0.22",
-    "cors":"^2.8.5"
+    "prettier": "2.8.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,13 +39,12 @@
     "eject": "react-scripts eject",
     "setup": "node ./src/scripts/generateFakeData.js",
     "host": "nodemon ./src/scripts/server.js",
-    "start-server": "npm run setup && npm run host"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start-server": "npm run setup && npm run host",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "browserslist": {
     "production": [

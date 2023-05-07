@@ -12,6 +12,7 @@ npm start (runs in browser on port 3000)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
 In the project directory, you can run:
 
 ### `npm run start-server`
@@ -38,17 +39,21 @@ Launches the test runner in the interactive watch mode.\
 
 Builds the app for production to the `build` folder.\
 
+## Assumptions
+
+The fake image path generated does not have images. Hence added few images in local to show the UI. The extra unwanted code need to be removed.
+
 ## Scope of improvements
 
 Keeping time in mind the changes are restricted to the scope of the assignment.
 
-Typescript - 
+Typescript -
 used in order to increase type checking and modelling of data.
 
-StoryBook - 
+StoryBook -
 moving common components will increase usability and options available on components for consuming teams.
 
-Mobile first design (Responsive application) - 
+Mobile first design (Responsive application) -
 Achieved thorugh base framework like bootstrap and still there is a scope for getting different layouts for other supporting devices.
 
 Accessibility - Used accessible elements and aria-tags. Not tested with screen readers and reports.
@@ -58,9 +63,5 @@ Unit testing components - Need to have seperate test file for each component, so
 Snapshot testing - Need to add snapshots to compare version changes
 E2E testing - To trace the flow and functionaly of the application
 
-Localization - 
+Localization -
 Fake api is using localized content. static content in this application requires translation strings in the supported language files
-
-
-
-
